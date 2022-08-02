@@ -1,7 +1,8 @@
 class ExpenseController < ApplicationController
 
   get "/expenses" do
-    { we_in: "AMAZING!" }.to_json
+    Expense.all.to_json
+    # { we_in: "AMAZING!" }.to_json
 
   end
 end

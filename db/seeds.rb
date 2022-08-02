@@ -11,6 +11,16 @@ levi = User.create(first_name: "Levi", last_name: "Little", username: "ll234", p
 sarah = User.create(first_name: "Sarah", last_name: "Owens", username: "sarahowens", password: "popcorn123", salary: 90000)
 josie = User.create(first_name: "Josie", last_name: "Peters", username: "jospet1992", password: "heather011", salary: 150000)
 
+rent = Category.create(category_name: "rent")
+food = Category.create(category_name: "food")
+clothes = Category.create(category_name: "clothes")
+vacation = Category.create(category_name: "vacation")
+gas = Category.create(category_name: "gas")
+doctor_bill = Category.create(category_name: "doctor bill")
+water_bill = Category.create(category_name: "water bill")
+power_bill = Category.create(category_name: "power bill")
+internet_bill = Category.create(category_name: "internet bill")
+phone_bill = Category.create(category_name: "phone bill")
 
 Expense.create(date:"1/1/22", amount: 1500.00, user_id: bethany.id, category_id: rent.id)
 Expense.create(date:"1/3/22", amount: 80.32, user_id: bethany.id, category_id: food.id)
@@ -24,16 +34,7 @@ Expense.create(date:"3/1/22", amount: 1750.00, user_id: josie.id, category_id: r
 Expense.create(date:"3/15/22", amount: 2300.00, user_id: levi.id, category_id: rent.id)
 
 
-rent = Category.create(category_name: "rent")
-food = Category.create(category_name: "food")
-clothes = Category.create(category_name: "clothes")
-vacation = Category.create(category_name: "vacation")
-gas = Category.create(category_name: "gas")
-doctor_bill = Category.create(category_name: "doctor bill")
-water_bill = Category.create(category_name: "water bill")
-power_bill = Category.create(category_name: "power bill")
-internet_bill = Category.create(category_name: "internet bill")
-phone_bill = Category.create(category_name: "phone bill")
+
 
 
 puts "✅ Done seeding!"
