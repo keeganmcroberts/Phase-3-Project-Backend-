@@ -7,14 +7,16 @@ class ExpenseController < ApplicationController
   end
 
   post "/expenses" do
+
+    category_located = Category.find_by(category_name: params[:category_name])
+
     Expense.create(
       amount: params[:amount],
-      # we don't know the category id, only the category name, 
-      category_id: params[:category_id],
+      category_id: category_located.id,
       date: params[:date],
-      # need it to be associated with currentUser 
-      # user_id: params[:currentUser.id]
+      # user_id: currentUser.id
     )
+    end
 
   delete "/expenses" do 
     
