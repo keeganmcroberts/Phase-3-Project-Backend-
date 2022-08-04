@@ -14,7 +14,7 @@ class ApplicationController < Sinatra::Base
     if userToLogin
 
       if ( userToLogin.password == params[:password] )
-        return userToLogin.to_json
+        return userToLogin.to_json(include: :expenses)
       else
         return {message: "incorrect password"}.to_json
       end
