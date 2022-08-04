@@ -1,6 +1,6 @@
 class ExpenseController < ApplicationController
 
-  get "/allExpenses" do
+  get "/expenses" do
     Expense.all.to_json
     
 
