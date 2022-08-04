@@ -6,5 +6,23 @@ class ApplicationController < Sinatra::Base
     { message: "Good luck with your project!" }.to_json
   end
 
+  post "/login" do
+    
+
+    userToLogin = User.find_by( username: params[:username])
+    # binding.pry
+    if userToLogin
+
+      if ( userToLogin.password == params[:password] )
+        return userToLogin.to_json
+      else
+        return {message: "incorrect password"}.to_json
+      end
+
+    else
+      return {message: "This username and password do not match"}.to_json
+    end
+  end
+
 
 end
