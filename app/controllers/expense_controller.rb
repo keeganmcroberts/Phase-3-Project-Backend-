@@ -14,6 +14,7 @@ class ExpenseController < ApplicationController
       amount: params[:amount],
       category_id: category_located.id,
       date: params[:date],
+      name: params[:name],
       # user_id: currentUser.id
     )
     end

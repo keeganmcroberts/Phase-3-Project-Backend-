@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2022_08_02_143421) do
     t.integer "user_id"
     t.integer "category_id"
     t.string "date"
+    t.string "expense_name"
     t.float "amount"
   end
 
