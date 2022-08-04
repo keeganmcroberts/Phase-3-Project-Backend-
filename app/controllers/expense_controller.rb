@@ -1,6 +1,6 @@
 class ExpenseController < ApplicationController
 
-  get "/allExpenses" do
+  get "/expenses" do
     Expense.all.to_json
     
 
@@ -14,7 +14,7 @@ class ExpenseController < ApplicationController
       amount: params[:amount],
       category_id: category_located.id,
       date: params[:date],
-      name: params[:name],
+      expense_name: params[:name],
       # user_id: currentUser.id
     )
     end
