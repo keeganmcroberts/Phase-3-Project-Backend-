@@ -1,7 +1,15 @@
 class UserController < ApplicationController
 
+  get "/users" do
+    User.all.to_json
+  end
 
-
+  patch "/users/:id" do
+    # User.all.to_json
+    edited_salary = User.find(params[:id])
+    edited_salary.update(params)
+    edited_salary.to_json
+  end
 
   
   # get "/users" do
