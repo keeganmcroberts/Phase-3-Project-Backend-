@@ -7,11 +7,13 @@ class ExpenseController < ApplicationController
   end
 
 
-  get "/my_expenses/:user_id" do
+  get "/my_expenses/:id" do
   #  binding.pry
-  user_to_locate.find(:user_id)
-  return user_locate.expenses.to_json
+  locating_user = User.find(params[:id])
+  locating_user.expenses.to_json
   end
+
+
 
   post "/expenses" do
 
@@ -22,13 +24,15 @@ class ExpenseController < ApplicationController
       category_id: category_located.id,
       date: params[:date],
       expense_name: params[:name],
-      # user_id: currentUser.id
+      user_id: currentUser.id
     )
     end
 
-  delete "/expenses" do 
-    
+  delete "/my_expenses/:id" do 
+    expense_to_delete = Expense.find(params[:id])
 
+    expense_to_delete.destroy
+    {message: "Expense Has Been Deleted"}.to_json
   end
 
 
