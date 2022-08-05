@@ -2,6 +2,7 @@ class UserController < ApplicationController
 
   get "/users" do
     User.all.to_json
+
   end
 
   patch "/users/:id" do
@@ -28,3 +29,4 @@ class UserController < ApplicationController
   #   end
     
 end
+
